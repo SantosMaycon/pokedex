@@ -1,6 +1,6 @@
 import React from 'react'
 import {ReactComponent as Logo} from '../../../Assets/Logo.svg';
-import styles from './ModalMobile.module.css'
+import styles from './styles.module.css'
 
 const ModalMobile = ({setModalActiveted}) => {
   React.useEffect(() => {

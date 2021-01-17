@@ -1,7 +1,7 @@
 import React from 'react'
 import {ReactComponent as Logo} from '../../Assets/Logo.svg';
-import styles from './Header.module.css'
-import ModalMobile from './ModalMobile/ModalMobile';
+import styles from './styles.module.css'
+import ModalMobile from './ModalMobile';
 
 const Header = () => {
   const [modalActiveted, setModalActiveted] = React.useState(false)
@@ -21,8 +21,8 @@ const Header = () => {
           <li><a href="/">Legendaries</a></li>
           <li><a href="/">Documentation</a></li>
         </ul>
-        <div className={styles.divButton}>
-          <button className={styles.button} onClick={() => setModalActiveted(true)}></button>
+        <div className={styles.divButton} onClick={() => setModalActiveted(true)}>
+          <button className={styles.button} ></button>
         </div>
       </nav>
       </div>

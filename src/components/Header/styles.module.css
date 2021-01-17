@@ -1,6 +1,11 @@
 .header {
   background: #F5DB13;
   box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+  position: fixed;
+  z-index: 199;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .container {
   display: flex;

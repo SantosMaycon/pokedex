@@ -1,0 +1,119 @@
+html {
+  background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%) no-repeat center;
+  background-size: cover;
+}
+
+.main {
+  margin-top: 99.4px;
+  padding-top: 128px;
+  padding-bottom: 191px;
+}
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px 0 20px;
+ display: grid;
+ grid-template-columns: minmax(516px, 1fr) 2fr;
+ justify-content: space-between;
+}
+.img {
+  background: url("../../Assets/BannerComplete.png") no-repeat center;
+  background-size: cover;
+}
+.title {
+  display: inline-block;
+  max-width: 516px;
+}
+.subtitle {
+  display: block;
+  max-width: 500px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+.button {
+  display: block;
+  text-align: center;
+  font-size: 23px;
+  line-height: 27px;
+  padding: 17px 36px;
+  background: rgb(115, 214, 119);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px -9px 0px inset;
+  border-radius: 11px;
+  cursor: pointer;
+  width: 231px;
+}
+
+span {
+  font-weight: bold;
+}
+
+/* Tablete */
+@media (max-width: 880px) {
+  .main {
+    margin-top: 99.8px;
+    padding-top: 41px;
+    padding-bottom: 18px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .img {
+    background: url("../../Assets/BannerComplete.png") no-repeat center;
+    width: 706px;
+    height: 539px;
+    margin: 0 30px;
+    position: initial;
+  }
+  .info {
+    margin: 0 auto;
+  }
+  .title {
+    text-align: center;
+    max-width: 639px;
+  }
+  .subtitle {
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 39px;
+    max-width: 639px;
+  }
+  .button {
+    margin: 0 auto;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 755px) {
+  .main {
+    margin-top: 89.8px;
+  }
+  .container {
+    max-width: 368px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .img {
+    width: 355px;
+    height: 285px;
+    margin: 0 10px;
+    background-size: cover;
+  }
+  .title {
+    max-width: initial;
+    font-size: 42px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: 4px;
+  }
+  .subtitle {
+    max-width: initial;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .button {
+    width: initial;
+    margin: 10px 15px;
+  }
+}
