@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
 .footer span {
@@ -15,21 +16,31 @@
 /* Tablete */
 @media (max-width: 880px) {
   .footer {
-    flex-direction: column-reverse;
-    justify-content: initial;
     margin-top: 15px;
   }
   .footer div span {
     display: inline-block;
     margin: 0 auto;
     text-align: center;
+    margin-right: 15px;
   }
   .footer span {
-    display: inline-block;
+    display: block;
     margin: 0 auto;
     text-align: center;
     font-size: 16px;
     line-height: 20px;
     padding: 10px 0;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 755px) {
+  .footer {
+    flex-direction: column-reverse;
+    justify-content: initial;
+  }
+  .footer div span {
+    margin-right: 0;
   }
 }
