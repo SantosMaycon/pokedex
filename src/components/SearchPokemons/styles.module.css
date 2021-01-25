@@ -1,0 +1,31 @@
+main {
+  display: initial !important;
+  margin-top: calc(99.4px + 73px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+}
+
+.title {
+  display: block;
+  font-weight: normal;
+  text-align: center;
+}
+
+.title span {
+  font-weight: bold;
+}
+
+/* Smartphone */
+@media (max-width: 755px) {
+  main {
+    margin-top: calc(89.8px + 20px);
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 28.06px;
+  }
+}
