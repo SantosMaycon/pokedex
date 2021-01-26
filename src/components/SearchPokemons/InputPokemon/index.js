@@ -1,9 +1,33 @@
 import React from 'react'
 import styles from './styles.module.css'
+import { ReactComponent as Icon } from '../../../Assets/location.svg'
 
-const InputPokemon = () => {
+const InputPokemon = ({ setUrlList, setPokemons }) => {
+  const [input, setInput] = React.useState('')
+
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    console.log(input)
+    setPokemons([])
+    setUrlList([`https://pokeapi.co/api/v2/pokemon/${input}/`])
+  }
+
+  function handleChange({target}) {
+    setInput(target.value)
+  }
+
   return (
-    <input className={styles.search} type="text" placeholder="Encuentra tu pokémon..."/>
+    <form className={styles.form}  onSubmit={handleSubmit}>
+      <input className={styles.search} 
+        type="text" 
+        placeholder="Encuentra tu pokémon..."
+        onChange={handleChange}
+        id="pokemon"
+        name="pokemon"
+      />
+      <button className={styles.button}> <Icon /> </button>
+    </form>
   )
 }
 

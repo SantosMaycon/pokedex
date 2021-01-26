@@ -1,3 +1,7 @@
+.form {
+  position: relative;
+}
+
 .search {
   width: 100%;
   border-radius: 40px;
@@ -22,11 +26,36 @@
   border: 2px solid #f5db13;
 }
 
+.button {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 44px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border: 2px solid transparent;
+  transition: 0.4s ease-in-out;
+  border-radius: 6px;
+}
+
+.button:focus,
+.button:hover {
+  border-radius: 6px;
+  outline: none;
+  border: 2px solid #f5db13;
+}
+
 /* Smartphone */
 @media (max-width: 755px) {
   .search {
     /* font-size: 12px;
     line-height: 15.08px; */
     padding: 9px 16px;
+  }
+  .button {
+    right: 10px;
+    top: 37px;
   }
 }
