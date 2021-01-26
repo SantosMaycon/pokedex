@@ -9,8 +9,10 @@
 }
 
 .cardTitle {
+  font-size: 16px;
   position: relative;
   z-index: 30;
+  width: 156px;
 }
 
 .info {

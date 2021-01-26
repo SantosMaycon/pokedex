@@ -1,3 +1,9 @@
+/* html {
+  max-width: initial;
+  background: initial;
+  background-size: initial;
+} */
+
 main {
   display: initial !important;
   margin-top: calc(99.4px + 73px);

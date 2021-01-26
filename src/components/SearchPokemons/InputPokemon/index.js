@@ -8,14 +8,14 @@ const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
   function handleSubmit(event) {
     event.preventDefault()
 
-    console.log(input)
     setPokemons([])
     setUrlList([`https://pokeapi.co/api/v2/pokemon/${input}/`])
     setInfinite(false)
   }
 
   function handleChange({target}) {
-    setInput(target.value)
+    console.log(target.value.toLowerCase())
+    setInput(target.value.toLowerCase())
   }
 
   return (
