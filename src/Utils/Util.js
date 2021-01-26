@@ -38,3 +38,13 @@ export function convertTypeToColor(type) {
       return "#000"
   }
 }
+
+export function getPokemon(json) {
+  const { id, name, types, stats } = json;
+  const src = "https://pokeres.bastionbot.org/images/pokemon/"+ id +".png";
+  const attack = stats[1].base_stat
+  const defense = stats[2].base_stat
+  const types_ = types.map((type) => type.type.name)
+  const color = types_[0]
+  return { id , name, types_, src, attack, defense, color }
+}

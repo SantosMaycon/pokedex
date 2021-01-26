@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.css'
 import { ReactComponent as Icon } from '../../../Assets/location.svg'
 
-const InputPokemon = ({ setUrlList, setPokemons }) => {
+const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
   const [input, setInput] = React.useState('')
 
   function handleSubmit(event) {
@@ -11,6 +11,7 @@ const InputPokemon = ({ setUrlList, setPokemons }) => {
     console.log(input)
     setPokemons([])
     setUrlList([`https://pokeapi.co/api/v2/pokemon/${input}/`])
+    setInfinite(false)
   }
 
   function handleChange({target}) {
