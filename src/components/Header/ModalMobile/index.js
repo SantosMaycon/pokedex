@@ -21,8 +21,8 @@ const ModalMobile = ({setModalActiveted}) => {
       </div>
       <nav>
         <ul className={styles.container}>
-          <li><a href="/" className={styles.logo}> <Logo /> </a></li>
-          <li><a href="/"> Pokedex </a></li>
+          <li><a href="/" className={styles.logo} onClick={() => setModalActiveted(false) }> <Logo /> </a></li>
+          <li><a href="search" onClick={() => setModalActiveted(false) }> Pokedex </a></li>
           <li><a href="/"> Legendarios </a></li>
           <li><a href="/"> Documentation </a></li>
         </ul>

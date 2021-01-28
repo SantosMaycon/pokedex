@@ -40,14 +40,18 @@ export function convertTypeToColor(type) {
 }
 
 export function getPokemon(json) {
-  const { id, name, types, stats, sprites } = json;
+  const { id, name, types, stats, sprites, abilities, base_experience } = json;
   // const src = "https://pokeres.bastionbot.org/images/pokemon/"+ id +".png";
   const src = sprites.other['official-artwork']['front_default'];
+  const health = stats[0].base_stat
   const attack = stats[1].base_stat
   const defense = stats[2].base_stat
+  const attackSuper = stats[3].base_stat
+  const defenseSuper = stats[4].base_stat
   const types_ = types.map((type) => type.type.name)
+  const abilities_ = abilities.map((abilitie) => abilitie.ability.name.replace("-"," "))
   const color = types_[0]
-  return { id , name, types_, src, attack, defense, color }
+  return { id , name, types_, abilities_, src, health, attack, defense, attackSuper, defenseSuper, base_experience, color }
 }
 
 export function orderPokemons(a, b) {
@@ -58,4 +62,33 @@ export function orderPokemons(a, b) {
     return 1;
   }
   return 0;
+}
+
+export function getGeneretion(pokemonId) {
+  if( pokemonId > 0 && pokemonId <= 151)
+    return "Generation 1"
+
+  if( pokemonId > 151 && pokemonId <= 251 )
+    return "Generation 2"
+
+  if (pokemonId > 251 && pokemonId <= 386)
+    return "Generation 3"
+
+  if (pokemonId > 386 && pokemonId <= 493)
+    return "Generation 4"
+  
+  if (pokemonId > 493 && pokemonId <= 649)
+    return "Generation 5"
+
+  if (pokemonId > 649 && pokemonId <= 721)
+    return "Generation 6"
+
+  if (pokemonId > 721 && pokemonId <= 809)
+    return "Generation 7"
+
+  if (pokemonId > 809 && pokemonId <= 890)
+    return "Generation 8"
+
+  if(pokemonId <= 0 || pokemonId > 891)
+    return "New Generation"
 }
