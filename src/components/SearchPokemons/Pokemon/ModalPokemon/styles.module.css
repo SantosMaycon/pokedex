@@ -19,7 +19,7 @@
   border-radius: 16px;
 }
 
-.img {
+.background {
   position: relative;
   background-size: contain;
   background-position: center;
@@ -27,6 +27,10 @@
   width: 342.763671875px;
   height: 100%;
   border-radius: 16px 0 0 16px;
+}
+
+.img {
+  margin: 31px auto;
 }
 
 .type {
@@ -44,9 +48,10 @@
   padding: 0.15px 15px;
 }
 
-/* ---------------------------------------------------------- */
-
 .info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   width: calc(100% - 342.763671875px);
   padding: 29px 20px 25.31px 12.65px;
 }
@@ -84,28 +89,25 @@
 .row2 {
   display: inline-block;
   background: #fdfdfd;
-  /* max-width: 264px; */
-  /* padding: 12.32px 80.54px 9.97px 28.46px; */
   padding: 12.32px 28.46px 9.97px 28.46px;
-  margin: 25.25px 0 21.32px 0;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
   border-radius: 8px;
+  max-width: 375px;
 }
 
 .row3 {
   display: flex;
   background: #fdfdfd;
-  max-width: 362.39px;
   padding: 18.65px 18.97px 7.99px 19.63px;
   justify-content: space-between;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
   border-radius: 8px;
-  margin-bottom: 21.31px;
 }
 
 .row4 {
   display: flex;
   justify-content: space-between;
+  gap: 18px;
 }
 
 .row4 div {
@@ -136,4 +138,66 @@
   line-height: 14px;
   text-align: center;
   color: #4b4b4b;
+}
+
+@media (max-width: 880px) {
+  h5 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .card {
+    width: 669.13px;
+    height: 310.71px;
+  }
+  .info {
+    gap: 10px;
+    width: calc(100% - 304.75px);
+    padding: 26.96px 16.74px 21.2px 19.33px;
+  }
+  .background {
+    width: 304.75px;
+  }
+  .img {
+    margin: -13px auto;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .id {
+    font-size: 14px;
+    line-height: 16.37px;
+    width: 43px;
+    height: 43px;
+    top: -16px;
+    right: 5px;
+    padding-top: 14px;
+  }
+  .generation {
+    font-size: 21px;
+    line-height: 26px;
+  }
+  .row2 {
+    padding: 8.83px 28.46px 8px 23.81px;
+  }
+  .row2 span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .row3 {
+    padding: 10.65px 11.97px 7.99px 10.63px;
+  }
+  .row4 {
+    gap: 14px;
+  }
+  .row4 div {
+    padding: 6px 15px 2px;
+  }
+  .row4 div span {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    padding-left: 0px;
+  }
 }

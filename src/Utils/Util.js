@@ -51,7 +51,8 @@ export function getPokemon(json) {
   const types_ = types.map((type) => type.type.name)
   const abilities_ = abilities.map((abilitie) => abilitie.ability.name.replace("-"," "))
   const color = types_[0]
-  return { id , name, types_, abilities_, src, health, attack, defense, attackSuper, defenseSuper, base_experience, color }
+  const name_ = name.replace(/-\w+/g, "")
+  return { id , name_, types_, abilities_, src, health, attack, defense, attackSuper, defenseSuper, base_experience, color }
 }
 
 export function orderPokemons(a, b) {
@@ -90,5 +91,19 @@ export function getGeneretion(pokemonId) {
     return "Generation 8"
 
   if(pokemonId <= 0 || pokemonId > 891)
-    return "New Generation"
+    return "New"
+}
+
+export function addScroll () {
+  if (window.location.pathname === "/")
+    document.querySelector("body").className = "scroll gradiente"
+  else 
+    document.querySelector("body").className = "scroll"
+}
+
+export function removeScroll() {
+  if (window.location.pathname === "/")
+    document.querySelector("body").className = "noScroll gradiente"
+  else 
+  document.querySelector("body").className = "noScroll"
 }

@@ -1,20 +1,22 @@
 import React from 'react'
 import styles from './styles.module.css'
-import { convertTypeToColor, getGeneretion } from '../../../../Utils/Util'
+import { convertTypeToColor, getGeneretion, removeScroll } from '../../../../Utils/Util'
 
 const ModalPokemon = ({ pokemon, setModalActiveted }) => {
   console.log("Modal Pokemon:", pokemon)
+  removeScroll()
   return (
     <div className={styles.modal}>
       <div className={styles.card} onClick={() => setModalActiveted(false)}>
-        <div className={styles.img} style={{ backgroundColor: convertTypeToColor(pokemon.color) , backgroundImage: `url(${pokemon.src})` }}>
+        <div className={styles.background} style={{ backgroundColor: convertTypeToColor(pokemon.color) }}>
+          <img className={styles.img} src={pokemon.src} alt={pokemon.name_}/>
           <ul className={styles.type}>
             { pokemon.types_.map((type) => <li key={type + 1} style={{ background: convertTypeToColor(type) }}>{ type }</li> ) }  
           </ul>
         </div>
         <div className={styles.info}>
           <div className={styles.row1}>
-            <h3 className={styles.title}>{ pokemon.name }</h3>
+            <h3 className={styles.title}>{ pokemon.name_ }</h3>
             <div style={{position: "relative"}}>
               <span className={styles.generation}>{ getGeneretion(pokemon.id) }</span>
               <span className={styles.id}>{ pokemon.id }</span>

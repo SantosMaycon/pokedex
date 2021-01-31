@@ -1,19 +1,22 @@
 import React from 'react'
 import styles from './styles.module.css'
-import { convertTypeToColor } from '../../../Utils/Util'
+import { addScroll, convertTypeToColor } from '../../../Utils/Util'
 import ModalPokemon from './ModalPokemon'
+import ModalMobilePokemon from './ModalMobilePokemon'
 
 
 const Pokemon = ({ pokemon }) => {
   const [modalActiveted, setModalActiveted] = React.useState(false)
-
+  addScroll()
   if (pokemon) {
     return (
       <>
-        { modalActiveted && <ModalPokemon  pokemon={pokemon} setModalActiveted={setModalActiveted} />}
+        { modalActiveted && ( window.innerWidth > 755 ?
+         <ModalPokemon pokemon={pokemon} setModalActiveted={setModalActiveted} />
+         : <ModalMobilePokemon pokemon={pokemon} setModalActiveted={setModalActiveted} /> )}
         <div className={styles.card} onClick={() => setModalActiveted(true)} style={{cursor: "pointer"}}>
           <div className={styles.info}>
-            <h5 className={styles.cardTitle}>{ pokemon.name }</h5>
+            <h5 className={styles.cardTitle}>{ pokemon.name_ }</h5>
             <div className={styles.stats}>
               <div>
                 <span>{ pokemon.attack }</span>

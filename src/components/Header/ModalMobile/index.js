@@ -1,5 +1,6 @@
 import React from 'react'
 import {ReactComponent as Logo} from '../../../Assets/Logo.svg';
+import { removeScroll } from '../../../Utils/Util';
 import styles from './styles.module.css'
 
 const ModalMobile = ({setModalActiveted}) => {
@@ -14,6 +15,8 @@ const ModalMobile = ({setModalActiveted}) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [setModalActiveted]);
 
+  removeScroll()
+
   return (
     <header className={styles.modal}>
       <div className={styles.divX}>
@@ -23,8 +26,6 @@ const ModalMobile = ({setModalActiveted}) => {
         <ul className={styles.container}>
           <li><a href="/" className={styles.logo} onClick={() => setModalActiveted(false) }> <Logo /> </a></li>
           <li><a href="search" onClick={() => setModalActiveted(false) }> Pokedex </a></li>
-          <li><a href="/"> Legendarios </a></li>
-          <li><a href="/"> Documentation </a></li>
         </ul>
       </nav>
     </header>
