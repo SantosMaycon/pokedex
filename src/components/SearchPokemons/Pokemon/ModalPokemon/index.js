@@ -3,7 +3,17 @@ import styles from './styles.module.css'
 import { convertTypeToColor, getGeneretion, removeScroll } from '../../../../Utils/Util'
 
 const ModalPokemon = ({ pokemon, setModalActiveted }) => {
-  console.log("Modal Pokemon:", pokemon)
+  React.useEffect(() => {
+    function handleResize() {
+      if(window.innerWidth <= 681) {
+        setModalActiveted(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setModalActiveted]);
+
   removeScroll()
   return (
     <div className={styles.modal}>

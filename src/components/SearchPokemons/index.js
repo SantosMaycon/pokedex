@@ -34,7 +34,7 @@ const SearchPokemons = () => {
       if (infinite) {
         const scroll = window.scrollY
         const height = document.body.offsetHeight - window.innerHeight
-        if (scroll > height * 0.95 && !wait) {
+        if (scroll > height * 0.70 && !wait) {
           wait = true
           console.log("Inifite status:", infinite)
           console.log("Next:", next)
