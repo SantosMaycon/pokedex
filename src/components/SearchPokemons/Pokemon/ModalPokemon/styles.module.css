@@ -2,42 +2,40 @@
   position: fixed;
   z-index: 200;
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background: rgba(33, 33, 33, 0.3);
   top: 0;
   left: 0;
-  right: 0;
 }
 
 .card {
   display: flex;
-  margin: auto;
-  width: 796.6px;
-  height: 414px;
-  background: linear-gradient(180deg, #732119 42.19%, #d93e30 100%);
-  border-radius: 16px;
+  max-width: 800px;
+  margin: 10px;
 }
 
-.background {
+.pokemon {
   position: relative;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 342.763671875px;
-  height: 100%;
+  max-width: 342px;
+  max-height: 348px;
   border-radius: 16px 0 0 16px;
 }
 
-.img {
-  margin: 31px auto;
+.pokemon img {
+  max-width: 117%;
+  position: relative;
+  top: -68px;
+  left: -26px;
 }
 
 .type {
   position: absolute;
   display: flex;
   gap: 14.47px;
-  bottom: 19.65px;
+  bottom: 7px;
   right: 14.39px;
 }
 
@@ -49,17 +47,20 @@
 }
 
 .info {
+  max-width: 400px;
+  padding: 20px;
+  background: linear-gradient(180deg, #732119 42.19%, #d93e30 100%);
+  border-radius: 0 16px 16px 0;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  width: calc(100% - 342.763671875px);
-  padding: 29px 20px 25.31px 12.65px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .row1 {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .title {
@@ -68,10 +69,11 @@
 
 .generation {
   color: #fdfdfd;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 30.17px;
   font-weight: normal;
   margin-right: 52px;
+  padding-left: 20px;
 }
 
 .id {
@@ -93,6 +95,7 @@
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
   border-radius: 8px;
   max-width: 375px;
+  align-self: baseline;
 }
 
 .row3 {
@@ -107,11 +110,12 @@
 .row4 {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  gap: 5px;
 }
 
 .row4 div {
-  padding: 10px 20px 10px;
+  width: 80px;
+  padding: 10px 0;
   background: #fdfdfd;
   text-align: center;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
@@ -120,8 +124,8 @@
 
 .row4 div span {
   display: inline-block;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   padding-top: 9px;
   padding-left: 1px;
@@ -140,64 +144,100 @@
   color: #4b4b4b;
 }
 
-@media (max-width: 880px) {
-  h5 {
-    font-size: 16px;
-    line-height: 19px;
+@media (max-width: 680px) {
+  .pokemon img {
+    max-width: 100%;
+    position: relative;
+    top: initial;
+    left: initial;
   }
+}
+
+@media (max-width: 580px) {
   .card {
-    width: 669.13px;
-    height: 310.71px;
+    flex-direction: column;
+  }
+  .pokemon {
+    max-width: 400px;
+    border-radius: 16px 16px 0 0;
+  }
+  .pokemon img {
+    position: initial;
+    max-width: 400px;
+    margin: auto;
   }
   .info {
-    gap: 10px;
-    width: calc(100% - 304.75px);
-    padding: 26.96px 16.74px 21.2px 19.33px;
+    max-width: 400px;
+    border-radius: 0 0 16px 16px;
   }
-  .background {
-    width: 304.75px;
+  .type {
+    bottom: initial;
+    top: 18px;
+    right: 42.39px;
   }
-  .img {
-    margin: -13px auto;
+}
+
+@media (max-width: 500px) {
+  .modal {
+    background: rgba(33, 33, 33, 0.9);
+    /* align-items: initial; */
+    overflow-y: scroll;
   }
-  .title {
-    font-size: 24px;
-    line-height: 28px;
+}
+
+@media (max-width: 425px) {
+  .card {
+    width: 95%;
+    height: 95%;
+    margin: 20px 0;
   }
-  .id {
-    font-size: 14px;
-    line-height: 16.37px;
-    width: 43px;
-    height: 43px;
-    top: -16px;
-    right: 5px;
-    padding-top: 14px;
+  .pokemon {
+    max-height: 255px;
   }
-  .generation {
-    font-size: 21px;
-    line-height: 26px;
+  .pokemon img {
+    max-width: 310px;
+    margin: 0 auto;
+  }
+  .info {
+    height: calc(100% - 250px);
   }
   .row2 {
-    padding: 8.83px 28.46px 8px 23.81px;
+    align-self: stretch;
   }
-  .row2 span {
-    font-size: 16px;
-    line-height: 20px;
+  .type {
+    right: 17.39px;
   }
-  .row3 {
-    padding: 10.65px 11.97px 7.99px 10.63px;
+}
+
+@media (max-width: 325px) {
+  .modal {
+    align-items: center;
   }
-  .row4 {
-    gap: 14px;
+  .card {
+    height: 100%;
   }
-  .row4 div {
-    padding: 6px 15px 2px;
+  .pokemon {
+    max-height: 245px;
   }
-  .row4 div span {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    padding-top: 8px;
-    padding-left: 0px;
+  .pokemon img {
+    max-height: 245px;
+  }
+  .title {
+    position: absolute;
+    z-index: 100;
+    width: 1px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    top: 70px;
+    left: 23px;
+    line-height: 0.9;
+    font-family: monospace;
+  }
+  .generation {
+    right: 0;
+  }
+  .id {
+    top: -16px;
+    right: -108px;
   }
 }

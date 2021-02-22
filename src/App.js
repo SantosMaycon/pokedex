@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header/index";
-import Home from "./components/Home/index";
-import Footer from "./components/Footer/index";
-import SearchPokemons from "./components/SearchPokemons/index";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import SearchPokemons from "./components/SearchPokemons";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
