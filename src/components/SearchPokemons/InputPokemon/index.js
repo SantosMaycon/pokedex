@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 import { ReactComponent as Icon } from '../../../Assets/location.svg'
+import dataPokemon from '../../../Utils/dataPokemon'
 
 const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
   const [input, setInput] = React.useState('')
@@ -13,7 +14,7 @@ const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
     setInfinite(false)
   }
 
-  function handleChange({target}) {
+  function handleChange({ target }) {
     console.log(target.value.toLowerCase())
     setInput(target.value.toLowerCase())
   }
@@ -26,8 +27,12 @@ const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
         onChange={handleChange}
         id="pokemon"
         name="pokemon"
+        list="dataPokemon"
       />
       <button className={styles.button}> <Icon /> </button>
+      { input.length > 2 && <datalist id="dataPokemon">
+        { dataPokemon.map((pokemon) => <option value={pokemon.name} className={styles.option}></option>) } 
+      </datalist> }
     </form>
   )
 }

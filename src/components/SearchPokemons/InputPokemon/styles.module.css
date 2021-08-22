@@ -47,6 +47,10 @@
   border: 2px solid #f5db13;
 }
 
+.option {
+  border: 2px solid #f5db13;
+}
+
 /* Smartphone */
 @media (max-width: 755px) {
   .search {
