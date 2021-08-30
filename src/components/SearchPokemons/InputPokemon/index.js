@@ -27,12 +27,12 @@ const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
         onChange={handleChange}
         id="pokemon"
         name="pokemon"
-        list="dataPokemon"
+        // list="dataPokemon"
       />
       <button className={styles.button}> <Icon /> </button>
-      { input.length > 2 && <datalist id="dataPokemon">
+      {/* { input.length > 2 && <datalist id="dataPokemon">
         { dataPokemon.map((pokemon) => <option value={pokemon.name} className={styles.option}></option>) } 
-      </datalist> }
+      </datalist> } */}
     </form>
   )
 }
