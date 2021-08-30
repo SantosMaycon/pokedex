@@ -7,10 +7,24 @@ import {
 } from "../../../../Utils/Util";
 
 const ModalPokemon = ({ pokemon, setModalActiveted }) => {
+  const ref = React.useRef(null)
+
+  const changeClickedOutside = (event) => {
+    if (ref.current === event.target) setModalActiveted(false)
+  }
+
+  React.useEffect(() => {
+    document.body.addEventListener('click', changeClickedOutside, true)
+    return () => {
+      document.body.removeEventListener('click', changeClickedOutside, true)
+    }
+  })
+
   removeScroll();
   return (
-    <div className={styles.modal}>
-      <div className={styles.card} onClick={() => setModalActiveted(false)}>
+    <div className={styles.modal} ref={ref}>
+      <div className={styles.card} >
+        <button className={styles.close} onClick={() => setModalActiveted(false)}>X</button>
         <div
           className={styles.pokemon}
           style={{ backgroundColor: convertTypeToColor(pokemon.color) }}

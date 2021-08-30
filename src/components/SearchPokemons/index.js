@@ -42,8 +42,8 @@ const SearchPokemons = () => {
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.7 && !wait) {
           wait = true;
-          console.log("Inifite status:", infinite);
-          console.log("Next:", next);
+          // console.log("Inifite status:", infinite);
+          // console.log("Next:", next);
           setPages(next);
           setTimeout(() => {
             wait = false;

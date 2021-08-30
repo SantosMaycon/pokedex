@@ -14,7 +14,7 @@ const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
   }
 
   function handleChange({ target }) {
-    console.log(target.value.toLowerCase())
+    // console.log(target.value.toLowerCase())
     setInput(target.value.toLowerCase())
   }
 
