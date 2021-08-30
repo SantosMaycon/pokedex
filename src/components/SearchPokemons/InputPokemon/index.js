@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
 import { ReactComponent as Icon } from '../../../Assets/location.svg'
-import dataPokemon from '../../../Utils/dataPokemon'
 
 const InputPokemon = ({ setUrlList, setPokemons, setInfinite }) => {
   const [input, setInput] = React.useState('')
